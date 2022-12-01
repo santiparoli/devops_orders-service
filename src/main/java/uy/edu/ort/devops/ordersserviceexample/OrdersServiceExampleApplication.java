@@ -9,11 +9,17 @@ import uy.edu.ort.devops.ordersserviceexample.logic.OrdersLogic;
 
 @SpringBootApplication
 public class OrdersServiceExampleApplication {
+	private static Logger logger = LoggerFactory.getLogger(OrdersServiceExampleApplication.class);
 
 	public static void main(String[] args) {
 		OrdersLogic.setPaymentsServiceUrl(args[0]);
+		logger.info("Payments Service url: "+args[0]);
+
 		OrdersLogic.setShippingServiceUrl(args[1]);
+		logger.info("Shipping Service url: "+args[1]);
+
 		OrdersLogic.setProductsServiceUrl(args[2]);
+		logger.info("Products Service url: "+args[2]);
 
 		SpringApplication.run(OrdersServiceExampleApplication.class, args);
 	}

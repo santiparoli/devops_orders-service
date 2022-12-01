@@ -26,14 +26,17 @@ public class OrdersLogic {
 
     public static void setPaymentsServiceUrl(String paymentsServiceUrl) {
         PAYMENTS_SERVICE_URL = paymentsServiceUrl;
+        logger.info("Payments URL: " +PAYMENTS_SERVICE_URL);
     }
 
     public static void setShippingServiceUrl(String shippingServiceUrl) {
         SHIPPING_SERVICE_URL = shippingServiceUrl;
+        logger.info("Shipping URL: "+SHIPPING_SERVICE_URL);
     }
 
     public static void setProductsServiceUrl(String productsServiceUrl) {
         PRODUCTS_SERVICE_URL = productsServiceUrl;
+        logger.info("Products URL: "+PRODUCTS_SERVICE_URL);
     }
 
     public OrderStatus buy(List<String> products) {

@@ -5,7 +5,8 @@ COPY pom.xml /workspace
 COPY src /workspace/src
 RUN mvn -B package --file pom.xml -DskipTests
 
-FROM openjdk:14-slim
-RUN apt-get update && apt-get install -y curl
+FROM openjdk:8-jdk-alpine
+RUN apk add --update curl
+RUN apk add --update nslookup
 COPY --from=build /workspace/target/orders-service-example-*-SNAPSHOT-spring-boot.jar app.jar
 CMD java -jar /app.jar $APP_ARGS

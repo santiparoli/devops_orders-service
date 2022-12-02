@@ -17,25 +17,25 @@ public class OrdersLogic {
 
     private static Logger logger = LoggerFactory.getLogger(OrdersLogic.class);
 
-    private static String PAYMENTS_SERVICE_URL = "ms-payments.default";
-    private static String SHIPPING_SERVICE_URL = "ms-shipping.default";
-    private static String PRODUCTS_SERVICE_URL = "ms-products.default";
+    private static String PAYMENTS_SERVICE_URL = "http://ms-payments-service.default";
+    private static String SHIPPING_SERVICE_URL = "http://ms-shipping-service.default";
+    private static String PRODUCTS_SERVICE_URL = "http://ms-products-service.default";
 
     @Autowired
     private RestTemplate restTemplate;
 
     public static void setPaymentsServiceUrl(String paymentsServiceUrl) {
-        //PAYMENTS_SERVICE_URL = paymentsServiceUrl;
+        PAYMENTS_SERVICE_URL = paymentsServiceUrl;
         logger.info("Payments URL: " +PAYMENTS_SERVICE_URL);
     }
 
     public static void setShippingServiceUrl(String shippingServiceUrl) {
-        //SHIPPING_SERVICE_URL = shippingServiceUrl;
+        SHIPPING_SERVICE_URL = shippingServiceUrl;
         logger.info("Shipping URL: "+SHIPPING_SERVICE_URL);
     }
 
     public static void setProductsServiceUrl(String productsServiceUrl) {
-        //PRODUCTS_SERVICE_URL = productsServiceUrl;
+        PRODUCTS_SERVICE_URL = productsServiceUrl;
         logger.info("Products URL: "+PRODUCTS_SERVICE_URL);
     }
 
